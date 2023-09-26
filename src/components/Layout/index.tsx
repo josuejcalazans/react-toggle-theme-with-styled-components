@@ -6,7 +6,7 @@ export function Layout () {
 
   return (
     <>
-      <Header/>
+      <Header />
       <PostList/>
       <Footer/> 
     </>
