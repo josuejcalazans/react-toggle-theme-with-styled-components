@@ -1,8 +1,12 @@
+import { Footer } from "../Footer";
+import { Header } from "../Header";
+
 export function Layout () {
 
   return (
     <>
-       <h1>Hello World!</h1> 
+      <Header/>
+      <Footer/> 
     </>
   )
 }
