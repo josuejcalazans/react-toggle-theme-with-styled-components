@@ -4,4 +4,6 @@ export default {
   ...commonStyles,
   backgroundColor: '#222',
   textColor: '#fff',
+  headerBackGroundColor: '#111',
+  postBackgroundColor: '#333'
 };
