@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import themes from "../styles/themes";
 import { ThemeProviderProps } from "./themeContext.types";
 import { ThemeProvider } from "styled-components";
@@ -10,11 +10,17 @@ export const ThemeContext = createContext({
 });
 
 export function ThemeProviderContext({children}:ThemeProviderProps) {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
+  const storedTheme = localStorage.getItem('theme');
+  const initialTheme = storedTheme && (storedTheme === 'dark' || storedTheme === 'light') ? storedTheme : 'dark';
+
+  const [theme, setTheme] = useState<'dark' | 'light'>(initialTheme);
 
   const currentTheme = useMemo(() => themes[theme] || themes.dark, [theme]);
 
-  console.log({currentTheme})
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   
   return (
     <ThemeContext.Provider
