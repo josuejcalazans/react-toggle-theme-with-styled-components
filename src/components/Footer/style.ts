@@ -6,9 +6,9 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  border-radius: 10px;
-  margin-top: 24px;
+  padding: 0 ${({theme})=> theme.spacing.large}px;
+  border-radius: ${({theme})=> theme.borderRadius};
+  margin-top: ${({theme})=> theme.spacing.large}px;
 
   button {
     cursor: pointer;

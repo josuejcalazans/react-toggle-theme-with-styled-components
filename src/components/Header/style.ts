@@ -6,12 +6,12 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  border-radius: 10px;
+  padding: 0 ${({theme})=> theme.spacing.large}px;
+  border-radius:${({theme})=> theme.borderRadius};
  
 
   button {
-    font-size: 16px;
+    font-size: ${({theme})=> theme.spacing.medium}px;
     cursor: pointer;
     background: transparent;
     border: none;
